@@ -1,5 +1,5 @@
 local module = {}
--- Module Script; Put in ReplicatedStorage
+-- Module Script 
 	function module:DistributeInitialResources(faction)
 		-- The values will later be edited.
 		local factions = {
