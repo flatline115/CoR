@@ -1,0 +1,15 @@
+local remote = Instance.new("RemoteEvent", game.ReplicatedStorage);
+remote.Name = "Callback";
+remote.OnServerEvent:connect(function(player, Functioncall, data)
+	local functions = {
+		CreateInstance = function(data)
+			for Type, Properties in next, data.Instance do
+				local newInstance = Instance.new(Type);
+				for Property, Value in next, Properties do
+					newInstance[Property] = Value;
+				end;
+			end;
+		end;
+	};
+	functions[Functioncall](data);
+end);
